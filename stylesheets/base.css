@@ -452,8 +452,38 @@ h1.title {
 h2.subtitle {
   color: #ffffff;
   font-size: 1.1em; }
+
 #header h3{
   text-align: right;
   position: relative;
   top: 20px;
+}
+
+.blog_post{
+  padding: 10px;
+}
+.blog_post.even{
+  background-color: #222;
+}
+
+.blog_post h2.title{
+  font-size: 1.75em;
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+.blog_post h2.title a{
+  color: white;
+}
+.blog_post h3.time{
+  font-weight: normal;
+  margin-top: 0;
+}
+.blog_post blockquote{
+  display: block;
+  padding: 10px;
+  background: #fff8ae;
+  color: black;
+}
+.blog_post blockquote p{
+  color: black;
 }

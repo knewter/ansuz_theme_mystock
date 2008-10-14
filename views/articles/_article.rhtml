@@ -1,8 +1,14 @@
-<div class='blog_post'>
+<div class='blog_post <%= cycle("odd", "even") -%>'>
   <div class="curved">
     <div class='contents'>
-      <h2 class='title'><%=h article.title -%></h2>
+      <h2 class='title'><%= link_to article.title, article_url(article) -%></h2>
       <h3 class='time'><em><%= article.created_at.strftime("%B %e\n%Y") -%></em></h3>
+
+      <!-- AddThis Button BEGIN -->
+      <script type="text/javascript">addthis_pub  = 'knewter';</script>
+      <a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '<%= article_url(article) -%>', '<%= article.title -%>')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/button1-addthis.gif" width="125" height="16" border="0" alt="" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+      <!-- AddThis Button END -->
+
       <%= article.contents -%>
     </div>
   </div>
