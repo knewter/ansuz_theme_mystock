@@ -1,0 +1,34 @@
+!!! XML
+!!! 1.0 Transitional
+%html{html_attrs}
+  %head
+    %title Blog | MyStock
+    %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' }
+    %meta{ :name => 'verify-v1', :content => 'W3XyG6A4xpXHpF3u1BuHw9s7nIBNM84pNCZMFvKK1A8=' }
+    %meta{ :name => 'description', :content => 'Search our premium royalty free stock photography and photos or browse our giant selection of stock photography.' }
+    %meta{ :name => 'keywords', :content => 'stock photography, photo search, digital stock photography, stock photos, stock image, photos, stock pictures, photos, photo search, digital stock, royalty free, royaltyfree, online photos, photography, mystock, high resolution, stock photo' }    
+    %link{ :href => 'http://www.mystock.com/favicon.ico', :rel => 'icon', :type => 'image/x-icon' }
+    %link{ :href => 'http://www.mystock.com/favicon.ico', :rel => 'Shortcut Icon', :type => 'image/x-icon' }
+    = javascript_include_tag :defaults, :cache => true
+    = theme_stylesheet_link_tag 'base'
+  %body
+    #container
+      #header
+        #logo_container.full
+          #logo
+            %span
+              %a{ :title => "MyStock", :href => "/"}= theme_image_tag('logo_bw.gif', :height => 100, :width => 200, :border => 0)
+          %h2.subtitle Blog
+          %h3= link_to "Back to the main site", "http://www.mystock.com"
+      .clear_fix
+      #stage
+        #page.no-styles
+          = yield
+    - if Rails.env == 'production'
+      :javascript
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      :javascript
+        var pageTracker = _gat._getTracker("UA-3359519-1");
+        pageTracker._initData();
+        pageTracker._trackPageview();
